@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Surprise 🎉</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Playfair Display + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- =========================================================
+       CANVAS: Floating balloons & confetti render here
+  ========================================================= -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- =========================================================
+       LANDING PAGE
+  ========================================================= -->
+  <section id="landingPage" class="page active">
+
+    <!-- Decorative balloon SVGs -->
+    <div class="balloon-layer" aria-hidden="true">
+      <span class="balloon b1">🎈</span>
+      <span class="balloon b2">🎈</span>
+      <span class="balloon b3">🎈</span>
+      <span class="balloon b4">🎈</span>
+      <span class="balloon b5">🎈</span>
+      <span class="balloon b6">🎈</span>
+    </div>
+
+    <div class="hero-content glass-card">
+      <div class="hero-icon">🎉</div>
+      <h1 class="hero-title">Birthday Surprise<span class="glow-dot"> 🎉</span></h1>
+      <p class="hero-subtitle">Enter your name and receive a special birthday wish.</p>
+
+      <div class="input-group">
+        <input type="text" id="nameInput" class="name-input" placeholder="Your name here..." maxlength="40"
+          autocomplete="off" aria-label="Enter your name" />
+        <button id="generateBtn" class="btn btn-primary" aria-label="Generate birthday wish">
+          <span class="btn-text">Generate Wish ✨</span>
+          <span class="btn-shine"></span>
+        </button>
+      </div>
+
+      <p id="inputError" class="input-error" role="alert" aria-live="polite"></p>
+    </div>
+
+    <!-- Floating stars decoration -->
+    <div class="stars-layer" aria-hidden="true">
+      <span class="star s1">⭐</span>
+      <span class="star s2">✨</span>
+      <span class="star s3">⭐</span>
+      <span class="star s4">✨</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       BIRTHDAY WISH PAGE
+  ========================================================= -->
+  <section id="wishPage" class="page" aria-live="polite">
+
+    <!-- Top balloon row -->
+    <div class="balloon-layer" aria-hidden="true">
+      <span class="balloon b1">🎈</span>
+      <span class="balloon b2">🎈</span>
+      <span class="balloon b3">🎈</span>
+      <span class="balloon b4">🎈</span>
+      <span class="balloon b5">🎈</span>
+      <span class="balloon b6">🎈</span>
+    </div>
+
+    <!-- Birthday card -->
+    <div class="card-wrapper">
+      <article class="birthday-card glass-card" id="birthdayCard">
+
+        <!-- Card header -->
+        <div class="card-header">
+          <div class="cake-emoji">🎂</div>
+          <h2 class="card-title" id="cardTitle">Happy Birthday, [Name]!</h2>
+          <p class="card-date" id="cardDate"></p>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider" aria-hidden="true">
+          <span>🌟</span><span>✨</span><span>🌟</span>
+        </div>
+
+        <!-- Typing message area -->
+        <div class="card-body">
+          <p class="wish-text" id="wishText" aria-label="Birthday message"></p>
+          <span class="typing-cursor" id="typingCursor" aria-hidden="true">|</span>
+        </div>
+
+        <!-- Signature -->
+        <div class="card-footer">
+          <p class="signature">With love &amp; joy 💜</p>
+        </div>
+
+      </article>
+
+      <!-- Action buttons below card -->
+      <div class="action-buttons">
+        <button id="anotherWishBtn" class="btn btn-secondary" aria-label="Generate another wish">
+          🔄 Another Wish
+        </button>
+        <button id="downloadCardBtn" class="btn btn-gold" aria-label="Download birthday card">
+          ⬇️ Download Card
+        </button>
+      </div>
+    </div>
+
+    <!-- Stars -->
+    <div class="stars-layer" aria-hidden="true">
+      <span class="star s1">⭐</span>
+      <span class="star s2">✨</span>
+      <span class="star s3">⭐</span>
+      <span class="star s4">✨</span>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       MUSIC CONTROL (Floating, always visible)
+  ========================================================= -->
+  <button id="musicBtn" class="music-btn" aria-label="Play birthday music" title="Toggle Birthday Music">
+    🎵
+  </button>
+
+  <!-- Hidden audio element — uses a royalty-free Web Audio tone generated in JS -->
+  <audio id="birthdayAudio" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
